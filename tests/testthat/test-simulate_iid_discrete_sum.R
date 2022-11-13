@@ -10,7 +10,7 @@ test_that("simulate_iid_discrete_sum simulates single die roll", {
   set.seed(1)
   simulate_roll <- simulate_iid_discrete_sum(no_variables, max, no_sims, min)
   
-  # reset seed and simulate manualy
+  # reset seed and simulate manually 
   set.seed(1)
   dice_roll <- purrr::rdunif(no_sims, max, min)
   
@@ -29,7 +29,7 @@ test_that("simulate_iid_discrete_sum simulates a number of dice roll", {
   set.seed(1)
   simulate_roll <- simulate_iid_discrete_sum(no_variables, max, no_sims, min)
   
-  # reset seed and simulate manualy
+  # reset seed and simulate manually
   set.seed(1)
   dice_roll_1 <- purrr::rdunif(no_sims, max, min)
   dice_roll_2 <- purrr::rdunif(no_sims, max, min)
