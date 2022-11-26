@@ -45,20 +45,20 @@ test_that("create_stats_table returns df for multiple dice", {
   die2_index <- 5
   dice <- 2
   stat_names <- c("Mean", "Standard deviation", "Min", "Max")
-  
+
   # set seed and simulate rolls
   set.seed(1)
   simulated_rolls <- simulate_dice_roll(no_dice, no_sims, dice_types)
-  
+
   # create stats table
   stats_table <- create_stats_table(no_dice, simulated_rolls)
-  
+
   # manual table calculation
   manual_table <- data.frame(
     "Expected" = c(
       global$dice_avg_value[die1_index] + global$dice_avg_value[die2_index],
       sqrt(
-        global$dice_stddev_values[die1_index] + 
+        global$dice_stddev_values[die1_index] +
           global$dice_stddev_values[die2_index]
       ),
       dice,
@@ -74,4 +74,3 @@ test_that("create_stats_table returns df for multiple dice", {
   )
   expect_equal(stats_table, manual_table)
 })
-
