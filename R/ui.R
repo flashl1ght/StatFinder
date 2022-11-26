@@ -8,13 +8,13 @@ ui <- shinydashboard::dashboardPage(
     shinydashboard::sidebarMenu(
       id = "tabs_menu",
       shinydashboard::menuItem(
-        "Home", 
+        "Home",
         tabName = "home_tab",
         icon = shiny::icon("house", class = "fa-solid fa-house"),
         selected = TRUE
       ),
       shinydashboard::menuItem(
-        "Roll for damage", 
+        "Roll for damage",
         tabName = "sum_stats_tab",
         icon = shiny::icon("dice", class = "fa-solid fa-dice")
       )
@@ -25,7 +25,7 @@ ui <- shinydashboard::dashboardPage(
     shiny::includeScript(
       system.file(file.path("www", "exit_popup.js"), package = "StatFinder")
     ),
-    
+
     # Dashboard tabs
     shinydashboard::tabItems(
       shinydashboard::tabItem(
@@ -33,7 +33,7 @@ ui <- shinydashboard::dashboardPage(
       ),
       shinydashboard::tabItem(
         tabName = "sum_stats_tab",
-        
+
         # Call a function that creates the tab content
         sum_stats_ui()
       )

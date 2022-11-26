@@ -1,9 +1,6 @@
 
 # Shiny server function
 server <- function(input, output, session) {
-  
-  # Stop app on windows close
-  session$onSessionEnded(function() {
-    shiny::stopApp()
-  })
+  # sum_stats tab server
+  sum_stats_server(input, output, session)
 }
