@@ -57,4 +57,15 @@ sum_stats_server <- function(input, output, session) {
     rownames = TRUE,
     width = "100%"
   )
+
+  # renders dice results chart
+  output$sum_stats_plot <- plotly::renderPlotly({
+    shiny::req(
+      session$userData$dice_sum_stats$roll_results,
+      !all(session$userData$dice_sum_stats$dice_rolled == 0),
+      !any(is.na(session$userData$dice_sum_stats$dice_rolled))
+    )
+
+    dice_histogram(session$userData$dice_sum_stats$roll_results)
+  })
 }

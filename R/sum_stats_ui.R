@@ -70,6 +70,11 @@ sum_stats_ui <- function() {
         title = "Dice statistics",
         width = 3,
         shiny::tableOutput("sum_stats_table")
+      ),
+      shinydashboard::box(
+        title = "Results graph",
+        width = 5,
+        plotly::plotlyOutput("sum_stats_plot")
       )
     )
   )
