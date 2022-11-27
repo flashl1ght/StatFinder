@@ -102,7 +102,7 @@ create_stats_table <- function(no_dice, rolls) {
   } else {
     # expected values
     expected_mean <- sum(no_dice * global$dice_avg_value)
-    expected_stddev <- sqrt(sum(no_dice * global$dice_stddev_values))
+    expected_stddev <- sqrt(sum(no_dice * global$dice_variance_values))
     expected_min <- sum(no_dice)
     expected_max <- sum(no_dice * unlist(global$dice_no_sides))
 

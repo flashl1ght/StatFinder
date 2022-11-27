@@ -19,7 +19,7 @@ test_that("create_stats_table returns df for single die", {
   manual_table <- data.frame(
     "Expected" = c(
       global$dice_avg_value[die_index],
-      sqrt(global$dice_stddev_values[die_index]),
+      sqrt(global$dice_variance_values[die_index]),
       die,
       die_sides
     ),
@@ -58,8 +58,8 @@ test_that("create_stats_table returns df for multiple dice", {
     "Expected" = c(
       global$dice_avg_value[die1_index] + global$dice_avg_value[die2_index],
       sqrt(
-        global$dice_stddev_values[die1_index] +
-          global$dice_stddev_values[die2_index]
+        global$dice_variance_values[die1_index] +
+          global$dice_variance_values[die2_index]
       ),
       dice,
       die1_sides + die2_sides
